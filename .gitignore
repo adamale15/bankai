@@ -1,27 +1,43 @@
-# Markdown docs (planning files, kept local only)
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
 *.md
 
-# Dependencies
-node_modules/
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-# Build output
-.next/
-dist/
-out/
+# testing
+/coverage
 
-# Environment variables
-.env
-.env.local
-.env.*.local
+# next.js
+/.next/
+/out/
 
-# System files
+# production
+/build
+
+# misc
 .DS_Store
-Thumbs.db
+*.pem
 
-# Editor
-.vscode/
-.idea/
-
-# Logs
-*.log
+# debug
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
