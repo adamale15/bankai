@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Gateway - Awaken</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "on-surface-variant": "#d1c1d7",
+                        "secondary-container": "#00fbfb",
+                        "on-secondary-fixed": "#002020",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#f3daff",
+                        "on-secondary": "#003737",
+                        "primary": "#e3b5ff",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#e3b5ff",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#2f004c",
+                        "on-tertiary": "#492900",
+                        "surface-container-highest": "#353534",
+                        "secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdcbd",
+                        "surface-tint": "#e3b5ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed": "#2c1600",
+                        "outline-variant": "#4e4355",
+                        "surface-dim": "#131313",
+                        "on-primary": "#4d007a",
+                        "outline": "#9a8ca0",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-container": "#ffe9d8",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container": "#201f1f",
+                        "background": "#131313",
+                        "tertiary-container": "#9c5c00",
+                        "secondary-fixed": "#00fbfb",
+                        "on-tertiary-fixed-variant": "#693c00",
+                        "secondary-fixed-dim": "#00dddd",
+                        "inverse-primary": "#9000de",
+                        "on-secondary-container": "#007070",
+                        "primary-container": "#a020f0",
+                        "surface-bright": "#3a3939",
+                        "on-primary-fixed-variant": "#6e00ab",
+                        "on-primary-container": "#f9e8ff",
+                        "tertiary-fixed-dim": "#ffb86e",
+                        "surface": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "tertiary": "#ffb86e",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "on-background": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Noto Serif JP", "serif"],
+                        "body": ["Space Grotesk", "sans-serif"],
+                        "label": ["Space Grotesk", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .vertical-rl { writing-mode: vertical-rl; text-orientation: mixed; }
+        .glass-panel { background-color: rgba(53, 53, 52, 0.6); backdrop-filter: blur(24px); }
+        .glow-hover:hover { box-shadow: inset 0 0 15px var(--tw-colors-primary); }
+    </style>
+</head>
+<body class="bg-[#050505] text-on-background font-body min-h-screen flex flex-col m-0 p-0 overflow-hidden">
+<!-- Top Navigation (Web) - Suppressed for Landing Page Intent -->
+<!-- Side Navigation (Web) - Suppressed for Landing Page Intent -->
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col justify-center items-center relative w-full h-screen">
+<!-- Background Layer: Subtle Texture & Katana Silhouette -->
+<div class="absolute inset-0 z-0 opacity-40 bg-center bg-cover bg-no-repeat mix-blend-screen" data-alt="Faint silhouette of a katana blade cutting through swirling mist in deep high contrast monochrome" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9yyc9J4KSHCHpom3pWF22JNPQ3oQmuUaJVcQ0EHKFXhABlwst94DuzHiwIaUQg-AhFpkygyVo-dBeR_EptuONkN4cmYuO_d_mhgUhavfuqbhnHjQDX0kGAGgMj3czWy-Uw6MG7N5_E0ROCpaVs04gafLLmqCoNRe9tOIIKqrztJ04vtHHGE8dLZmBjSp2vRA8kmLIY0IFonA_-qUNojoQZE3m5fswbzEX2J9D5G04bEldAP02n-5fl6bWZZtM2W8nPsKkdWU-dJvx');">
+</div>
+<!-- Subtle Ink Splatter Graphic Overlay -->
+<div class="absolute inset-0 z-10 opacity-20 bg-center bg-cover bg-no-repeat pointer-events-none" data-alt="Abstract black ink splatters on textured paper with sharp irregular edges" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeLRUtjwm7_wcZ2N3yirjBVZZ9iyVRe95V8_rabFP1GqP7PDVHkeuzeRcZTj4hMMEUfqFaH0H_mqPXLWrPDyvArcnHJAIXzrqIqLYZsnIeUvJ8JsgCquKPwedeifmGXiqTwZBJdTwoDeZ0UeZg5DT2b0MBSO2PVE0mMl9OjMJKcgMJuRtSx388hvDTFrXMwT4SsJERjSS2nm6ikiIzO51PzmmRg_iXDT7Pzy3Ofjrzs4PwR9g3R1pJNjA-dcg3aFD1Ndy7kieSPFen');">
+</div>
+<!-- Central Content Focus -->
+<div class="z-20 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 relative px-6">
+<!-- Left Side: Ambient Info / Atmosphere -->
+<div class="hidden md:flex flex-col items-end gap-4 text-right">
+<p class="font-body text-secondary text-xs uppercase tracking-[0.2em] opacity-50">Division 13 / Sector 4</p>
+<div class="w-12 h-[1px] bg-secondary opacity-30"></div>
+<p class="font-headline text-secondary text-lg italic opacity-70">"The void is not empty."</p>
+</div>
+<!-- Center: The Vertical Calligraphy -->
+<div class="flex flex-col items-center">
+<h1 class="font-headline font-black text-6xl md:text-9xl text-primary-container tracking-[-0.05em] vertical-rl h-[512px] flex items-center justify-center drop-shadow-[0_0_20px_rgba(160,32,240,0.4)]" style="text-shadow: 2px 2px 0px #050505, -2px -2px 0px #050505;">
+                    AWAKEN
+                </h1>
+</div>
+<!-- Right Side: The Action -->
+<div class="flex flex-col items-start gap-8 mt-12 md:mt-0">
+<div class="glass-panel p-6 border-l-2 border-primary-container min-w-[280px]">
+<h2 class="font-headline text-secondary text-xl mb-2">The Spiritual Razor</h2>
+<p class="font-body text-on-surface-variant text-sm mb-6 leading-relaxed">Cross the threshold. Your Zanpakuto awaits its true name.</p>
+<button class="w-full relative overflow-hidden bg-primary-container text-on-primary-container font-body font-bold text-sm uppercase tracking-widest py-4 px-6 rounded-none glow-hover transition-all duration-300 group shadow-[0_0_15px_rgba(160,32,240,0.3)] hover:shadow-[0_0_30px_rgba(160,32,240,0.6)]">
+<span class="relative z-10 flex items-center justify-center gap-2">
+                            Begin the Trial
+                            <span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+</span>
+<div class="absolute inset-0 bg-gradient-to-br from-primary to-primary-container opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
+</button>
+</div>
+<div class="flex items-center gap-4 cursor-pointer group">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors text-3xl">play_circle</span>
+<span class="font-body text-xs text-outline-variant uppercase tracking-widest border-b border-transparent group-hover:border-secondary group-hover:text-secondary transition-all">Watch Prologue</span>
+</div>
+</div>
+</div>
+<!-- Ambient Bottom Gradient for grounding -->
+<div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#050505] to-transparent z-10 pointer-events-none"></div>
+</main>
+</body></html>

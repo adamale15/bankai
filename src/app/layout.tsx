@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Serif_JP, Space_Grotesk, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { PostHogProvider } from "@/components/providers/PostHogProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const notoSerifJP = Noto_Serif_JP({
+  variable: "--font-headline",
   subsets: ["latin"],
+  weight: ["400", "700", "900"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
 });
 
 const geistMono = Geist_Mono({
@@ -31,7 +38,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}>
+      <body
+        className={`${notoSerifJP.variable} ${spaceGrotesk.variable} ${geistMono.variable} antialiased bg-[#131313] text-[#e5e2e1]`}
+        style={{ fontFamily: "var(--font-body)" }}
+      >
         <PostHogProvider>{children}</PostHogProvider>
       </body>
     </html>

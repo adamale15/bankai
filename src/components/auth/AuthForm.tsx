@@ -28,7 +28,7 @@ export function AuthForm({ mode }: Props) {
       if (error) {
         setError(error.message);
       } else {
-        setMessage("Check your email to confirm your account.");
+        setMessage("A confirmation has been sent to your address. Return when ready.");
       }
     } else {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
@@ -50,77 +50,174 @@ export function AuthForm({ mode }: Props) {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-black px-4">
-      <div className="w-full max-w-sm space-y-6">
-        <div className="text-center space-y-1">
-          <p className="text-xs tracking-[0.3em] uppercase text-indigo-400/70">Soul Society</p>
-          <h1 className="text-2xl font-bold text-white">
+    <div
+      className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
+      style={{ background: "#050505" }}
+    >
+      {/* Paper grain */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.07] paper-grain"
+        aria-hidden
+      />
+
+      {/* Purple ambient glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse 50% 40% at 50% 50%, rgba(160,32,240,0.06) 0%, transparent 70%)" }}
+        aria-hidden
+      />
+
+      <div className="relative z-10 w-full max-w-sm">
+        {/* Header */}
+        <div className="mb-10">
+          <p
+            className="text-xs uppercase tracking-[0.2em] mb-3"
+            style={{ fontFamily: "var(--font-body)", color: "#a020f0" }}
+          >
+            Soul Society / Authentication
+          </p>
+          <h1
+            className="text-4xl font-black text-white"
+            style={{ fontFamily: "var(--font-headline)" }}
+          >
             {mode === "signup" ? "Begin the Trial" : "Return to the Inner World"}
           </h1>
         </div>
 
+        {/* Confirmation */}
         {message && (
-          <p className="text-sm text-indigo-300 text-center border border-indigo-800 rounded p-3 bg-indigo-950/40">
-            {message}
-          </p>
+          <div
+            className="mb-6 p-4 border-l-2 border-[#a020f0]"
+            style={{ background: "rgba(160,32,240,0.08)" }}
+          >
+            <p
+              className="text-sm"
+              style={{ fontFamily: "var(--font-body)", color: "#d1c1d7" }}
+            >
+              {message}
+            </p>
+          </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-2">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Email */}
+          <div>
+            <label
+              className="block text-xs uppercase tracking-[0.15em] mb-2"
+              style={{ fontFamily: "var(--font-body)", color: "#9a8ca0" }}
+            >
+              Soul Address
+            </label>
             <input
               type="email"
-              placeholder="Email"
+              placeholder="your@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full rounded border border-zinc-800 bg-zinc-950 px-4 py-2.5 text-sm text-white placeholder:text-zinc-600 focus:border-indigo-500 focus:outline-none"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="w-full rounded border border-zinc-800 bg-zinc-950 px-4 py-2.5 text-sm text-white placeholder:text-zinc-600 focus:border-indigo-500 focus:outline-none"
+              className="w-full pb-2 pt-1 text-sm text-white placeholder:text-[#4e4355] focus:outline-none transition-colors"
+              style={{
+                background: "transparent",
+                borderBottom: "2px solid #a020f0",
+                fontFamily: "var(--font-body)",
+              }}
             />
           </div>
 
-          {error && <p className="text-xs text-red-400">{error}</p>}
+          {/* Password */}
+          <div>
+            <label
+              className="block text-xs uppercase tracking-[0.15em] mb-2"
+              style={{ fontFamily: "var(--font-body)", color: "#9a8ca0" }}
+            >
+              Spirit Key
+            </label>
+            <input
+              type="password"
+              placeholder="••••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="w-full pb-2 pt-1 text-sm text-white placeholder:text-[#4e4355] focus:outline-none transition-colors"
+              style={{
+                background: "transparent",
+                borderBottom: "2px solid #a020f0",
+                fontFamily: "var(--font-body)",
+              }}
+            />
+          </div>
 
+          {/* Error */}
+          {error && (
+            <div className="border-l-2 border-[#93000a] pl-3">
+              <p className="text-sm" style={{ color: "#ffb4ab", fontFamily: "var(--font-body)" }}>
+                {error}
+              </p>
+            </div>
+          )}
+
+          {/* Submit */}
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded border border-indigo-500/50 bg-indigo-950/60 py-2.5 text-sm font-semibold uppercase tracking-widest text-indigo-200 transition hover:bg-indigo-900/60 disabled:opacity-50"
+            className="w-full py-4 text-sm font-bold uppercase tracking-widest text-[#f9e8ff] transition-all duration-300 disabled:opacity-40"
+            style={{
+              background: "#a020f0",
+              fontFamily: "var(--font-body)",
+              boxShadow: loading ? "none" : "0 0 15px rgba(160,32,240,0.3)",
+            }}
           >
-            {loading ? "..." : mode === "signup" ? "Create Account" : "Sign In"}
+            {loading ? "Reading your soul…" : mode === "signup" ? "Create Account" : "Enter"}
           </button>
         </form>
 
-        <div className="relative flex items-center gap-3">
-          <div className="h-px flex-1 bg-zinc-800" />
-          <span className="text-xs text-zinc-600">or</span>
-          <div className="h-px flex-1 bg-zinc-800" />
+        {/* Divider */}
+        <div className="flex items-center gap-4 my-6">
+          <div className="flex-1 h-px" style={{ background: "rgba(78,67,85,0.5)" }} />
+          <span
+            className="text-xs uppercase tracking-widest"
+            style={{ color: "#4e4355", fontFamily: "var(--font-body)" }}
+          >
+            or
+          </span>
+          <div className="flex-1 h-px" style={{ background: "rgba(78,67,85,0.5)" }} />
         </div>
 
+        {/* Google */}
         <button
           onClick={handleGoogle}
-          className="w-full rounded border border-zinc-700 bg-zinc-950 py-2.5 text-sm text-zinc-300 transition hover:bg-zinc-900"
+          className="w-full py-3 text-sm tracking-widest uppercase transition-all duration-300"
+          style={{
+            fontFamily: "var(--font-body)",
+            color: "#9a8ca0",
+            border: "1px solid rgba(78,67,85,0.4)",
+            background: "transparent",
+          }}
         >
           Continue with Google
         </button>
 
-        <p className="text-center text-xs text-zinc-600">
+        {/* Switch */}
+        <p
+          className="mt-6 text-center text-xs"
+          style={{ color: "#4e4355", fontFamily: "var(--font-body)" }}
+        >
           {mode === "signup" ? (
-            <>Already have an account?{" "}
-              <Link href="/auth/login" className="text-indigo-400 hover:underline">Sign in</Link>
+            <>
+              Already have an account?{" "}
+              <Link href="/auth/login" className="transition-colors" style={{ color: "#a020f0" }}>
+                Sign in
+              </Link>
             </>
           ) : (
-            <>No account?{" "}
-              <Link href="/auth/signup" className="text-indigo-400 hover:underline">Begin the trial</Link>
+            <>
+              No account?{" "}
+              <Link href="/auth/signup" className="transition-colors" style={{ color: "#a020f0" }}>
+                Begin the trial
+              </Link>
             </>
           )}
         </p>
       </div>
-    </main>
+    </div>
   );
 }

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx dotenv-cli *)",
+      "Bash(DATABASE_URL=\"postgresql://postgres:bankai_ichigo2001@db.mmlamkyhrlxwruevvbzk.supabase.co:5432/postgres\" npx drizzle-kit push)",
+      "Bash(DATABASE_URL=\"postgresql://postgres.mmlamkyhrlxwruevvbzk:bankai_ichigo2001@aws-0-us-east-1.pooler.supabase.com:6543/postgres\" npx drizzle-kit push)",
+      "Bash(DATABASE_URL=\"postgresql://postgres:placeholder@localhost:5432/postgres\" npx drizzle-kit generate)"
+    ]
+  }
+}

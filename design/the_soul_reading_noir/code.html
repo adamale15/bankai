@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Soul Reading</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "on-surface-variant": "#d1c1d7",
+                        "secondary-container": "#00fbfb",
+                        "on-secondary-fixed": "#002020",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#f3daff",
+                        "on-secondary": "#003737",
+                        "primary": "#e3b5ff",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#e3b5ff",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#2f004c",
+                        "on-tertiary": "#492900",
+                        "surface-container-highest": "#353534",
+                        "secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdcbd",
+                        "surface-tint": "#e3b5ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed": "#2c1600",
+                        "outline-variant": "#4e4355",
+                        "surface-dim": "#131313",
+                        "on-primary": "#4d007a",
+                        "outline": "#9a8ca0",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-container": "#ffe9d8",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container": "#201f1f",
+                        "background": "#131313",
+                        "tertiary-container": "#9c5c00",
+                        "secondary-fixed": "#00fbfb",
+                        "on-tertiary-fixed-variant": "#693c00",
+                        "secondary-fixed-dim": "#00dddd",
+                        "inverse-primary": "#9000de",
+                        "on-secondary-container": "#007070",
+                        "primary-container": "#a020f0",
+                        "surface-bright": "#3a3939",
+                        "on-primary-fixed-variant": "#6e00ab",
+                        "on-primary-container": "#f9e8ff",
+                        "tertiary-fixed-dim": "#ffb86e",
+                        "surface": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "tertiary": "#ffb86e",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "on-background": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif", "serif"],
+                        "body": ["Space Grotesk", "sans-serif"],
+                        "label": ["Space Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (TopAppBar) -->
+<header class="bg-[#050505] flex justify-between items-center w-full px-12 py-6 max-w-full docked full-width top-0 border-none shadow-[0px_20px_40px_rgba(255,255,255,0.04)] hidden md:flex z-50">
+<!-- Navigation Links -->
+<nav class="flex gap-8 items-center">
+<a class="text-white/70 font-medium hover:text-white transition-colors duration-300 ease-in-out font-['Noto_Serif_JP'] uppercase tracking-[-0.02em] text-sm hover:bg-[#A020F0]/10 hover:text-[#A020F0]" href="#">Soul</a>
+<a class="text-white/70 font-medium hover:text-white transition-colors duration-300 ease-in-out font-['Noto_Serif_JP'] uppercase tracking-[-0.02em] text-sm hover:bg-[#A020F0]/10 hover:text-[#A020F0]" href="#">Forge</a>
+<a class="text-[#A020F0] font-bold border-b-2 border-[#A020F0] pb-1 duration-300 ease-in-out font-['Noto_Serif_JP'] uppercase tracking-[-0.02em] text-sm" href="#">Arsenal</a>
+<a class="text-white/70 font-medium hover:text-white transition-colors duration-300 ease-in-out font-['Noto_Serif_JP'] uppercase tracking-[-0.02em] text-sm hover:bg-[#A020F0]/10 hover:text-[#A020F0]" href="#">Sanctum</a>
+</nav>
+<!-- Brand Logo -->
+<div class="font-['Noto_Serif_JP'] font-black text-2xl tracking-tighter text-[#A020F0] absolute left-1/2 -translate-x-1/2">
+            ZANPAKUTO FORGE
+        </div>
+<!-- Trailing Icons -->
+<div class="flex gap-4 items-center text-[#A020F0]">
+<button class="hover:bg-[#A020F0]/10 p-2 duration-300 ease-in-out">
+<span class="material-symbols-outlined" data-icon="account_circle" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+<button class="hover:bg-[#A020F0]/10 p-2 duration-300 ease-in-out">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</div>
+</header>
+<!-- Side Navigation (SideNavBar) - Mobile/Desktop split -->
+<aside class="bg-[#050505] docked left-0 h-screen w-24 border-r-0 fixed top-0 flex flex-col items-center py-10 z-40 md:hidden contrast-125">
+<!-- Logo/Title Vertical -->
+<div class="font-['Noto_Serif_JP'] text-xl font-bold text-white mb-12" style="writing-mode: vertical-rl; text-orientation: mixed;">
+            SEIREITEI
+        </div>
+<!-- Navigation Tabs -->
+<nav class="flex flex-col gap-8 flex-grow">
+<a class="text-white/40 hover:text-[#A020F0] hover:backdrop-blur-md hover:bg-white/5 transition-all duration-500 cubic-bezier(0.19, 1, 0.22, 1) flex flex-col items-center gap-2 p-2" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="psychology">psychology</span>
+</a>
+<a class="text-white/40 hover:text-[#A020F0] hover:backdrop-blur-md hover:bg-white/5 transition-all duration-500 cubic-bezier(0.19, 1, 0.22, 1) flex flex-col items-center gap-2 p-2" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_fix_high">auto_fix_high</span>
+</a>
+<a class="bg-[#A020F0] text-black font-bold scale-110 hover:backdrop-blur-md hover:bg-white/5 transition-all duration-500 cubic-bezier(0.19, 1, 0.22, 1) flex flex-col items-center gap-2 p-2" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="swords">swords</span>
+</a>
+<a class="text-white/40 hover:text-[#A020F0] hover:backdrop-blur-md hover:bg-white/5 transition-all duration-500 cubic-bezier(0.19, 1, 0.22, 1) flex flex-col items-center gap-2 p-2" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="temple_hindu">temple_hindu</span>
+</a>
+</nav>
+<!-- CTA -->
+<button class="mt-auto writing-vertical font-['Space_Grotesk'] uppercase tracking-widest text-xs text-[#A020F0] hover:text-white transition-colors" style="writing-mode: vertical-rl; text-orientation: mixed;">
+            RELEASE SHIKAI
+        </button>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col relative md:ml-0 ml-24 min-h-screen">
+<!-- Subtle Background Texture -->
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+<!-- Spirit Pressure Progress Bar -->
+<div class="w-full h-1 bg-surface-container-lowest z-10 relative">
+<div class="h-full bg-primary-container shadow-[0_0_15px_rgba(160,32,240,0.5)] transition-all duration-700 ease-in-out" style="width: 35%;"></div>
+<!-- Marker 1 -->
+<div class="absolute top-0 left-[20%] w-[2px] h-3 bg-surface-container-high -mt-1"></div>
+<!-- Marker 2 -->
+<div class="absolute top-0 left-[40%] w-[2px] h-3 bg-surface-container-high -mt-1"></div>
+<!-- Marker 3 -->
+<div class="absolute top-0 left-[60%] w-[2px] h-3 bg-surface-container-high -mt-1"></div>
+<!-- Marker 4 -->
+<div class="absolute top-0 left-[80%] w-[2px] h-3 bg-surface-container-high -mt-1"></div>
+</div>
+<!-- Quiz Container -->
+<div class="flex-grow flex items-center justify-center p-6 lg:p-12 z-10 relative">
+<!-- Bento Layout Container -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full max-w-7xl h-full items-center">
+<!-- Question Section (Left/Top) -->
+<div class="col-span-1 lg:col-span-5 flex flex-col justify-center h-full pr-0 lg:pr-12 relative">
+<!-- Vertical Accents -->
+<div class="hidden lg:block absolute left-0 top-1/4 h-1/2 w-[2px] bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
+<div class="font-label text-sm tracking-[0.2em] text-secondary-container mb-6 flex items-center gap-3">
+<span class="w-8 h-[1px] bg-secondary-container"></span>
+                        QUESTION III
+                    </div>
+<h1 class="font-headline text-4xl lg:text-5xl xl:text-6xl leading-tight tracking-[-0.02em] text-on-surface mb-8">
+                        In the face of <span class="text-error">inevitable defeat</span>,<br/>
+                        do you strike or seek a path to <span class="text-primary-container">survival</span>?
+                    </h1>
+<p class="font-body text-outline font-light text-lg leading-relaxed max-w-md">
+                        The true nature of your Zanpakuto lies not in its edge, but in the resolve that guides it when all hope seems lost.
+                    </p>
+</div>
+<!-- Options Section (Right/Bottom) -->
+<div class="col-span-1 lg:col-span-7 flex flex-col gap-6">
+<!-- Option A -->
+<button class="group relative w-full text-left overflow-hidden bg-surface-container-low transition-all duration-300 hover:bg-surface-container p-1 border border-outline-variant/15 hover:border-primary-container/40">
+<!-- 'Brush-stroke' edge effect container -->
+<div class="relative z-10 p-8 flex items-start gap-6">
+<div class="font-headline text-3xl text-surface-variant group-hover:text-primary transition-colors">A</div>
+<div>
+<h3 class="font-headline text-2xl text-on-surface mb-2 group-hover:text-primary-container transition-colors tracking-tight">I Strike Without Hesitation</h3>
+<p class="font-body text-outline text-sm leading-relaxed group-hover:text-on-surface-variant transition-colors">
+                                    A cornered beast bites hardest. I will leave a scar upon my enemy even if it costs my life. The blade must taste blood.
+                                </p>
+</div>
+</div>
+<!-- Inner Glow/Shadow on hover -->
+<div class="absolute inset-0 shadow-[inset_0_0_0_0_rgba(160,32,240,0)] group-hover:shadow-[inset_4px_0_20px_0_rgba(160,32,240,0.1)] transition-all duration-300 pointer-events-none"></div>
+<!-- Left accent bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-transparent group-hover:bg-primary-container transition-colors"></div>
+</button>
+<!-- Option B -->
+<button class="group relative w-full text-left overflow-hidden bg-surface-container-low transition-all duration-300 hover:bg-surface-container p-1 border border-outline-variant/15 hover:border-secondary-container/40">
+<!-- 'Brush-stroke' edge effect container -->
+<div class="relative z-10 p-8 flex items-start gap-6">
+<div class="font-headline text-3xl text-surface-variant group-hover:text-secondary-container transition-colors">B</div>
+<div>
+<h3 class="font-headline text-2xl text-on-surface mb-2 group-hover:text-secondary-container transition-colors tracking-tight">I Retreat and Observe</h3>
+<p class="font-body text-outline text-sm leading-relaxed group-hover:text-on-surface-variant transition-colors">
+                                    Death serves no purpose. I fall back to analyze the enemy's strength and find the single thread of vulnerability.
+                                </p>
+</div>
+</div>
+<!-- Inner Glow/Shadow on hover -->
+<div class="absolute inset-0 shadow-[inset_0_0_0_0_rgba(0,251,251,0)] group-hover:shadow-[inset_4px_0_20px_0_rgba(0,251,251,0.1)] transition-all duration-300 pointer-events-none"></div>
+<!-- Left accent bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-transparent group-hover:bg-secondary-container transition-colors"></div>
+</button>
+<!-- Option C -->
+<button class="group relative w-full text-left overflow-hidden bg-surface-container-low transition-all duration-300 hover:bg-surface-container p-1 border border-outline-variant/15 hover:border-error/40">
+<!-- 'Brush-stroke' edge effect container -->
+<div class="relative z-10 p-8 flex items-start gap-6">
+<div class="font-headline text-3xl text-surface-variant group-hover:text-error transition-colors">C</div>
+<div>
+<h3 class="font-headline text-2xl text-on-surface mb-2 group-hover:text-error transition-colors tracking-tight">I Abandon the Blade</h3>
+<p class="font-body text-outline text-sm leading-relaxed group-hover:text-on-surface-variant transition-colors">
+                                   If the sword cannot cut, I rely on kido, cunning, or my bare hands. The weapon is just a tool; I am the weapon.
+                               </p>
+</div>
+</div>
+<!-- Inner Glow/Shadow on hover -->
+<div class="absolute inset-0 shadow-[inset_0_0_0_0_rgba(255,180,171,0)] group-hover:shadow-[inset_4px_0_20px_0_rgba(255,180,171,0.1)] transition-all duration-300 pointer-events-none"></div>
+<!-- Left accent bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-transparent group-hover:bg-error transition-colors"></div>
+</button>
+</div>
+</div>
+</div>
+<!-- Navigation Footer (Next/Prev) -->
+<div class="w-full flex justify-between items-center p-6 lg:px-12 border-t border-outline-variant/10 mt-auto bg-surface-container-lowest z-10 relative">
+<button class="flex items-center gap-2 text-outline hover:text-on-surface transition-colors font-label text-sm tracking-widest uppercase">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+                Previous
+            </button>
+<span class="font-headline text-surface-variant">03 / 10</span>
+<button class="flex items-center gap-2 text-primary hover:text-primary-container transition-colors font-label text-sm tracking-widest uppercase">
+                Skip
+                <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</main>
+</body></html>

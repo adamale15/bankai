@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Inner World - Spirit Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "on-surface-variant": "#d1c1d7",
+                        "secondary-container": "#00fbfb",
+                        "on-secondary-fixed": "#002020",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353534",
+                        "primary-fixed": "#f3daff",
+                        "on-secondary": "#003737",
+                        "primary": "#e3b5ff",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#e3b5ff",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#2f004c",
+                        "on-tertiary": "#492900",
+                        "surface-container-highest": "#353534",
+                        "secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdcbd",
+                        "surface-tint": "#e3b5ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed": "#2c1600",
+                        "outline-variant": "#4e4355",
+                        "surface-dim": "#131313",
+                        "on-primary": "#4d007a",
+                        "outline": "#9a8ca0",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-container": "#ffe9d8",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container": "#201f1f",
+                        "background": "#131313",
+                        "tertiary-container": "#9c5c00",
+                        "secondary-fixed": "#00fbfb",
+                        "on-tertiary-fixed-variant": "#693c00",
+                        "secondary-fixed-dim": "#00dddd",
+                        "inverse-primary": "#9000de",
+                        "on-secondary-container": "#007070",
+                        "primary-container": "#a020f0",
+                        "surface-bright": "#3a3939",
+                        "on-primary-fixed-variant": "#6e00ab",
+                        "on-primary-container": "#f9e8ff",
+                        "tertiary-fixed-dim": "#ffb86e",
+                        "surface": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "tertiary": "#ffb86e",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "on-background": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Noto Serif JP", "serif"],
+                        "body": ["Space Grotesk", "sans-serif"],
+                        "label": ["Space Grotesk", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .vertical-rl { writing-mode: vertical-rl; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body h-screen w-screen overflow-hidden flex selection:bg-primary selection:text-on-primary">
+<!-- Shared Side Navigation (Hidden on Mobile, Displayed on Web) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full flex-col items-center py-10 z-50 bg-[#050505] w-24 border-r-0 contrast-125 transition-all duration-500 cubic-bezier(0.19, 1, 0.22, 1)">
+<!-- Brand / Title -->
+<div class="mb-12 font-headline text-xl font-bold vertical-rl text-white tracking-widest uppercase">
+            SEIREITEI
+        </div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-8 w-full items-center">
+<a class="flex flex-col items-center group text-white/40 hover:text-[#A020F0] hover:backdrop-blur-md hover:bg-white/5 p-4 w-full transition-all duration-500" href="#">
+<span class="material-symbols-outlined mb-2 text-2xl group-hover:scale-110 transition-transform">psychology</span>
+<span class="font-body uppercase tracking-widest text-xs">Soul</span>
+</a>
+<!-- Active State -->
+<a class="flex flex-col items-center group bg-[#A020F0] text-black font-bold p-4 w-full scale-110 transition-all duration-500 shadow-[0px_0px_20px_rgba(160,32,240,0.4)]" href="#">
+<span class="material-symbols-outlined mb-2 text-2xl">auto_fix_high</span>
+<span class="font-body uppercase tracking-widest text-xs">Forge</span>
+</a>
+<a class="flex flex-col items-center group text-white/40 hover:text-[#A020F0] hover:backdrop-blur-md hover:bg-white/5 p-4 w-full transition-all duration-500" href="#">
+<span class="material-symbols-outlined mb-2 text-2xl group-hover:scale-110 transition-transform">swords</span>
+<span class="font-body uppercase tracking-widest text-xs">Arsenal</span>
+</a>
+<a class="flex flex-col items-center group text-white/40 hover:text-[#A020F0] hover:backdrop-blur-md hover:bg-white/5 p-4 w-full transition-all duration-500" href="#">
+<span class="material-symbols-outlined mb-2 text-2xl group-hover:scale-110 transition-transform">temple_hindu</span>
+<span class="font-body uppercase tracking-widest text-xs">Sanctum</span>
+</a>
+</div>
+<!-- Spacer -->
+<div class="flex-grow"></div>
+<!-- Bottom Action / CTA -->
+<div class="mt-8 font-body uppercase tracking-widest text-xs text-white/40 vertical-rl cursor-pointer hover:text-primary transition-colors">
+            RELEASE SHIKAI
+        </div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col md:flex-row h-full md:ml-24 relative overflow-hidden bg-surface-container-lowest">
+<!-- Mobile Top Nav (Visible only on mobile) -->
+<nav class="md:hidden flex justify-between items-center w-full px-6 py-4 bg-[#050505] fixed top-0 z-50 border-b border-surface-container shadow-[0px_20px_40px_rgba(255,255,255,0.04)]">
+<div class="font-headline font-black text-xl tracking-tighter text-[#A020F0] uppercase">ZANPAKUTO FORGE</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-white/70 hover:text-[#A020F0] cursor-pointer transition-colors duration-300">account_circle</span>
+</div>
+</nav>
+<!-- Left Panel: Immersive Landscape (60%) -->
+<section class="w-full md:w-3/5 h-1/2 md:h-full relative border-b md:border-b-0 md:border-r border-surface-container-high/50">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A mysterious, frozen bamboo forest shrouded in thick, icy mist with pale blue and deep violet ambient lighting, creating a cinematic, ethereal atmosphere typical of an inner spiritual world." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBntbjcqhfnHqGuZRpNQ7f1MA0_O3wJSkdNLIeTSQ8vopBr8dZPJuusA-B4cSmraptkC0jqjFDXkqGOs0HqHazGF0Evi9uj7ufCFZ0HWhHdEDvW5WT8UBa3bK1ZLQBTOGrptzBISv8_E3V_oF41ApYzjUu75O-cuxwgCEegJPgWXSwLn2GIdSUIlFOiKxbo5WtVQPNzVTnm4EPlIw_-Ol-FeqXzjU68L9ab1mP8gzmewMO1mJbVNDFiVn2LIWHzZqMtkHmSTVcYTSR0');"></div>
+<!-- Atmospheric Overlay -->
+<div class="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-surface-container-lowest/90 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-secondary/5 mix-blend-overlay"></div>
+<!-- Content overlay -->
+<div class="absolute inset-0 p-8 flex flex-col justify-between z-10 pt-20 md:pt-8">
+<!-- Status -->
+<div class="flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-secondary-container animate-pulse shadow-[0_0_10px_#00fbfb]"></div>
+<span class="font-label text-secondary text-xs uppercase tracking-[0.2em] opacity-80">Synchronization Stable</span>
+</div>
+<!-- Spirit Details -->
+<div class="flex flex-col gap-2">
+<h1 class="font-headline text-5xl md:text-7xl font-black text-white tracking-tighter drop-shadow-2xl">HYŌRINMARU</h1>
+<p class="font-body text-secondary-container/80 text-sm md:text-base uppercase tracking-widest max-w-md">The strongest ice-type Zanpakuto in the Soul Society. Inner realm manifestation.</p>
+</div>
+</div>
+</section>
+<!-- Right Panel: Sleek Chat Interface (40%) -->
+<section class="w-full md:w-2/5 h-1/2 md:h-full flex flex-col bg-surface-container-lowest relative z-20 shadow-[-20px_0_40px_rgba(0,0,0,0.5)]">
+<!-- Chat Header -->
+<header class="flex-none p-6 border-b border-surface-container-low flex justify-between items-center bg-surface-container-lowest/80 backdrop-blur-md z-10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container text-3xl">ac_unit</span>
+<div>
+<h2 class="font-headline text-lg font-bold text-on-surface uppercase tracking-wider">Communion</h2>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest">Direct Link Active</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</header>
+<!-- Chat Messages Area -->
+<div class="flex-1 overflow-y-auto p-6 flex flex-col gap-8 scrollbar-hide bg-surface-container-lowest">
+<!-- Spirit Message (Calligraphic/Editorial) -->
+<div class="flex flex-col gap-2 items-start max-w-[85%]">
+<span class="font-label text-xs text-secondary-container uppercase tracking-widest ml-1">Hyōrinmaru</span>
+<div class="relative bg-surface-container-high/40 p-5 border-l-2 border-secondary-container backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.5)] group">
+<div class="absolute -left-[2px] top-0 h-4 w-[2px] bg-secondary-fixed shadow-[0_0_8px_#00fbfb]"></div>
+<p class="font-headline text-on-surface text-lg leading-relaxed tracking-wide">
+                            You have returned. The spiritual pressure in this realm is turbulent today. Have you come seeking guidance, or merely to test your resolve against the frost?
+                        </p>
+<!-- Decorative background character -->
+<span class="absolute right-2 bottom-2 text-6xl font-headline text-white/5 select-none pointer-events-none">氷</span>
+</div>
+<span class="font-label text-[10px] text-on-surface-variant/50 uppercase tracking-wider">10:42 AM</span>
+</div>
+<!-- User Message (Sharp/Minimalist) -->
+<div class="flex flex-col gap-2 items-end self-end max-w-[80%]">
+<span class="font-label text-xs text-primary uppercase tracking-widest mr-1">Shinigami</span>
+<div class="bg-primary-container p-4 shadow-[0_10px_30px_rgba(160,32,240,0.2)]">
+<p class="font-body text-on-primary-container text-sm leading-relaxed">
+                            I need to refine my control over the bankai. The latest hollow encounter proved my stamina is still lacking. Let us begin the training.
+                        </p>
+</div>
+<span class="font-label text-[10px] text-on-surface-variant/50 uppercase tracking-wider">10:45 AM</span>
+</div>
+<!-- Spirit Message (Calligraphic/Editorial) -->
+<div class="flex flex-col gap-2 items-start max-w-[85%]">
+<span class="font-label text-xs text-secondary-container uppercase tracking-widest ml-1">Hyōrinmaru</span>
+<div class="relative bg-surface-container-high/40 p-5 border-l-2 border-secondary-container backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.5)] group">
+<p class="font-headline text-on-surface text-lg leading-relaxed tracking-wide">
+                            Very well. Draw your blade and focus your intent. I will not hold back the cold. Prepare yourself.
+                        </p>
+<span class="absolute right-2 bottom-2 text-6xl font-headline text-white/5 select-none pointer-events-none">龍</span>
+</div>
+<span class="font-label text-[10px] text-on-surface-variant/50 uppercase tracking-wider">10:46 AM</span>
+</div>
+</div>
+<!-- Reiatsu Connection Meter & Input Area -->
+<div class="flex-none p-6 border-t border-surface-container flex flex-col gap-4 bg-surface-container-lowest">
+<!-- Reiatsu Meter -->
+<div class="flex flex-col gap-1 w-full">
+<div class="flex justify-between items-center px-1">
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Reiatsu Connection</span>
+<span class="font-label text-[10px] text-primary uppercase tracking-widest">87%</span>
+</div>
+<div class="h-1 w-full bg-surface-container-high relative overflow-hidden">
+<!-- Gradient Bar -->
+<div class="absolute top-0 left-0 h-full w-[87%] bg-gradient-to-r from-primary to-secondary-container"></div>
+<!-- Pulse effect -->
+<div class="absolute top-0 right-0 h-full w-4 bg-white/50 blur-[2px] animate-pulse"></div>
+</div>
+</div>
+<!-- Input Field -->
+<div class="flex gap-4 items-end bg-surface-container-low p-2 border-b-2 border-primary-container focus-within:border-secondary-container transition-colors duration-300">
+<button class="p-2 text-on-surface-variant hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</button>
+<textarea class="flex-1 bg-transparent border-none focus:ring-0 text-on-surface font-body text-sm resize-none py-2 placeholder:text-on-surface-variant/50 placeholder:uppercase placeholder:tracking-widest placeholder:text-xs" placeholder="Channel your intent..." rows="1"></textarea>
+<button class="p-2 bg-primary-container text-on-primary-container hover:bg-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+</body></html>
