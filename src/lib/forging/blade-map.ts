@@ -6,6 +6,7 @@ export type ZanpakutoData = {
   id: string;
   sealed_name: string;
   true_name: string | null;
+  release_command: string | null;
   blade_type: string;
   guard_desc: string;
   hilt_color: string;

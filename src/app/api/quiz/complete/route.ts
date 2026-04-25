@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { computeVector } from "@/lib/forging/vector";
-import { QUESTIONS } from "@/lib/quiz/questions";
 
 export async function POST(req: NextRequest) {
   const supabase = await createClient();
@@ -12,7 +11,7 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const { answers } = body as { answers: { questionId: string; optionId: string }[] };
 
-  if (!Array.isArray(answers) || answers.length !== QUESTIONS.length) {
+  if (!Array.isArray(answers) || answers.length === 0) {
     return NextResponse.json({ error: "Invalid answers" }, { status: 400 });
   }
 

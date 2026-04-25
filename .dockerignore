@@ -1,0 +1,15 @@
+.git
+.gitignore
+.next
+node_modules
+npm-debug.log*
+
+# Local env files — injected at runtime, never baked into image
+.env.local
+.env*.local
+
+# Dev/design artifacts
+design/
+.claude/
+coverage/
+*.tsbuildinfo

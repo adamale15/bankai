@@ -3,7 +3,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import type { Question } from "@/lib/quiz/questions";
-import { QUESTIONS } from "@/lib/quiz/questions";
 
 const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
 

@@ -88,18 +88,12 @@ export function QuizClient() {
   }
 
   function handleAnswer(optionId: string) {
-    if (optionId === "skip") {
-      if (currentIndex < QUESTIONS.length - 1) {
-        setCurrentIndex((i) => i + 1);
-      }
-      return;
-    }
     const newAnswers = [...answers, { questionId: QUESTIONS[currentIndex].id, optionId }];
     setAnswers(newAnswers);
     if (currentIndex < QUESTIONS.length - 1) {
-      setTimeout(() => setCurrentIndex((i) => i + 1), 400);
+      setTimeout(() => setCurrentIndex((i) => i + 1), optionId === "skip" ? 0 : 400);
     } else {
-      setTimeout(() => submit(newAnswers), 400);
+      setTimeout(() => submit(newAnswers), optionId === "skip" ? 0 : 400);
     }
   }
 

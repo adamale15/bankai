@@ -1,33 +1,25 @@
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { redirect } from "next/navigation";
-import { ForgeClient } from "@/components/forge/ForgeClient";
+import { ArsenalView } from "@/components/arsenal/ArsenalView";
 import type { ZanpakutoData } from "@/lib/forging/blade-map";
 
 export const dynamic = "force-dynamic";
 
-export default async function ForgePage() {
+export default async function ArsenalPage() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/auth/login");
 
   const admin = createAdminClient();
 
-  const { data: reading } = await admin
-    .from("soul_readings")
-    .select("id")
-    .eq("user_id", user.id)
-    .limit(1)
-    .single();
-
-  if (!reading) redirect("/app/quiz");
-
-  const { data: existing } = await admin
+  const { data: zanpakuto } = await admin
     .from("zanpakuto")
     .select("*")
     .eq("user_id", user.id)
-    .limit(1)
     .single();
 
-  return <ForgeClient initial={(existing as ZanpakutoData) ?? null} />;
+  if (!zanpakuto) redirect("/app/forge");
+
+  return <ArsenalView zanpakuto={zanpakuto as ZanpakutoData} />;
 }

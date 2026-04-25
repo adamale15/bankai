@@ -41,6 +41,7 @@ export function computeVector(
   const elementScores = Object.fromEntries(ELEMENTS.map((e) => [e, 0])) as Record<ElementType, number>;
 
   for (const { questionId, optionId } of answers) {
+    if (optionId === "skip") continue;
     const question = QUESTIONS.find((q) => q.id === questionId);
     if (!question) continue;
     const option = question.options.find((o) => o.id === optionId);

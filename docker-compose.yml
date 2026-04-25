@@ -1,0 +1,26 @@
+services:
+  web:
+    build:
+      context: .
+      target: runner
+      # NEXT_PUBLIC_ vars must be present at build time — they are inlined into the JS bundle
+      args:
+        NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL}
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+    image: bankai:latest
+    env_file:
+      - .env.local          # load all vars from .env.local automatically
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      # Repeat the NEXT_PUBLIC_ vars so they're available at runtime too
+      NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
